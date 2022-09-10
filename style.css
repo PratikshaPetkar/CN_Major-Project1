@@ -85,6 +85,7 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 position: relative;
+
 }
 
 .toggle-icon{
@@ -98,6 +99,7 @@ position: relative;
     right: 1px;
     border-radius: 50%;
     cursor: pointer;
+    transition: us ease all;
 }
 
 .sidebar{
@@ -156,6 +158,7 @@ position: relative;
     padding: 0 20px;
   }
   .movie-list-wrapper {
+    padding: 0 20px;
     position: relative;
     overflow: hidden;
   }
@@ -166,7 +169,104 @@ position: relative;
     transform: translateX(0);
     transition: all 1s ease-in-out;
   }
-  .movie-list-item {
-    margin-right: 30px;
+  .movie-list-item{
+    margin-right:30px ;
     position: relative;
+  }
+
+  .movie-list-item:hover .movie-list-item-img{
+    transform: scale(1.2);
+    margin: 0 20px;
+    opacity:0.5 ;
+  }
+
+  .movie-list-item:hover .movie-list-item-title,
+  .movie-list-item:hover .movie-list-item-desc,
+  .movie-list-item:hover .movie-list-item-button{
+    opacity: 1;
+  }
+
+
+
+  .movie-list-item-img {
+   width: 270px;
+   height: 200px;
+   transition: all is ease-in-out;
+   object-fit: cover;
+   border-radius: 20px;
   }    
+  .movie-list-item-title{
+    background-color: #333;
+    padding: 0 10px;
+    font-size: 32px ;
+    font-weight: bold;
+    position:absolute ;
+    top: 10%;
+    left: 50px;
+    opacity: 0;
+  }
+  .movie-list-item-desc{
+    background-color: #333;
+    padding:  10px;
+    font-size: 14px ;
+    position:absolute ;
+    top: 30%;
+    left: 50px;
+    width: 230px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  .movie-list-item-button{
+    padding:  10px;
+    background-color:#4dbf00 ;
+    color: white;
+    border-radius:10px ;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  .arrow{
+    font-size: 120px;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    color: lightgray;
+    opacity: .5;
+    cursor: pointer;
+  }
+  .container.active{
+    background-color: white;
+  }
+  
+  .movie-list-titl.active{
+    color: black;
+  }
+
+  .navbar-container.active{
+    background-color:white ;
+    color: black;
+
+  }
+  .sidebar.active{
+    background-color: white;
+  }
+  .left-menu-icon.active{
+    color: black;
+  }
+  .toggle.active{
+    background-color: black;
+  }
+  .toggle-ball.active{
+    background-color: white;
+transform: translateX(-20px);
+  }
+  @media only screen and (max-width: 940px){
+    .menu-container{
+        display: none;
+    }
+}
